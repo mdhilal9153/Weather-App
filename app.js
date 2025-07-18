@@ -7,7 +7,7 @@ let wind = document.querySelector(".wind");
 let place = document.querySelector(".city");
 let body = document.querySelector("body");
 
-const apiKey = "8ebf32149c5d15e985eed5226bc31fd7";
+const apiKey;
 
 
 btn.addEventListener("click", async () => {
