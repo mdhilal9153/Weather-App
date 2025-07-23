@@ -7,7 +7,7 @@ let wind = document.querySelector(".wind");
 let place = document.querySelector(".city");
 let body = document.querySelector("body");
 
-const apiKey = "8ebf32149c5d15e985eed5226bc31fd7";
+const apiKey = "";
 
 
 btn.addEventListener("click", async () => {
@@ -29,21 +29,25 @@ btn.addEventListener("click", async () => {
         let weather = data.weather[0].main;
 
         if (weather === "Rain") {
-            body.style.backgroundColor = "#7DA0CA";
+            body.style.backgroundColor = "#7DA0CA"; 
         } else if (weather === "Clouds") {
-            body.style.backgroundColor = "#9DB2BF";
-        } else if (weather === "Clear") {
-            if (tempVal <= 5) {
-                body.style.backgroundColor = "#005792";
-            } else if (tempVal > 5 && tempVal <= 15) {
-                body.style.backgroundColor = "#3A82D7";
-            } else if (tempVal > 38) {
-                body.style.backgroundColor = "#FF914D";
+            if (tempVal > 38) {
+                body.style.backgroundColor = "#FF914D"; 
             } else {
-                body.style.backgroundColor = "#87CEEB";
+                body.style.backgroundColor = "#9DB2BF"; 
+            }
+        } else if (weather === "Clear") {
+            if (tempVal > 38) {
+                body.style.backgroundColor = "#FF914D"; 
+            } else if (tempVal > 15) {
+                body.style.backgroundColor = "#87CEEB"; 
+            } else if (tempVal > 5) {
+                body.style.backgroundColor = "#3A82D7"; 
+            } else { 
+                body.style.backgroundColor = "#005792"; 
             }
         } else {
-            body.style.backgroundColor = "#A9A9A9";
+            body.style.backgroundColor = "#A9A9A9"; 
         }
 
 
